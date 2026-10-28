@@ -2,5 +2,6 @@
 
 GitHub Pages site: https://bpmdata.github.io/
 
-`index.html` is an interactive Plotly page made by `main.py` from the New Testament text in `nt_bible_clean.txt`
-(see the [BibleViz](https://github.com/BPMData/BibleViz) repo for the searchable Streamlit version).
+`index.html` lets you search the King James New Testament (`nt_bible_clean.txt`) for any words or phrases and plots where each one appears, using Plotly. It runs entirely in the browser, so no server is needed.
+
+`main.py` is the original Python script that made the first, fixed version of the chart. The [BibleViz](https://github.com/BPMData/BibleViz) repo has the older Streamlit search app.
