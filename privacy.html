@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy</title>
-<meta name="description" content="What AllAboard collects, how it uses Google Drive, and how long data is kept. Also covers OverBoard and BibleViz.">
+<meta name="description" content="What AllAboard collects, how it uses Google Drive, and how long data is kept. Also covers OverBoard, OverHeard and BibleViz.">
 <link rel="icon" href="icons/allaboard/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="icons/allaboard/favicon.ico" sizes="any">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
@@ -15,7 +15,7 @@
   <a class="back" href="./">← All apps</a>
   <div class="doc">
     <h1>Privacy policy</h1>
-    <p class="muted">AllAboard (<a href="https://allaboard.ai.studio">allaboard.ai.studio</a>), plus OverBoard and BibleViz.
+    <p class="muted">AllAboard (<a href="https://allaboard.ai.studio">allaboard.ai.studio</a>), plus OverBoard, OverHeard and BibleViz.
     Effective November 15, 2026.</p>
 
     <p>AllAboard is a free, shared classroom whiteboard. Students join a room with a room code and a display
@@ -113,7 +113,7 @@
     <h2>4. Security</h2>
     <p>AllAboard is served only over HTTPS. Teacher actions in a room require the room's teacher PIN.</p>
 
-    <h2>5. OverBoard and BibleViz</h2>
+    <h2>5. OverBoard, OverHeard and BibleViz</h2>
     <p><strong>OverBoard</strong> (<a href="https://bpmdata.github.io/OverBoard/">bpmdata.github.io/OverBoard</a>)
     runs entirely in your browser. Your PDFs, worksheets, ink and settings stay on your computer; nothing is
     uploaded. If you choose to send a <strong>Board not working?</strong> report, it includes the board brand and
@@ -122,6 +122,25 @@
     settings). Those details are posted as a public issue on OverBoard's GitHub page. Any comments and email
     address you add are never made public: they are emailed privately to the OverBoard reports inbox, and the
     email address is used only for a thank-you and one follow-up when there is a fix to try.</p>
+    <p><strong>OverHeard</strong> (<a href="https://over-heard.ai.studio/">over-heard.ai.studio</a>) turns speech
+    into captions and translations. It needs microphone permission, and it works like this:</p>
+    <ul>
+      <li><strong>Speech to text</strong> uses your browser's built-in speech recognition. In Chrome and Edge, the
+        browser may send the audio to Google or Microsoft to recognize it, under their terms. OverHeard never
+        receives or records audio.</li>
+      <li><strong>Translation:</strong> the recognized text is sent to OverHeard's server, which translates it
+        with Google Translate or Google's Gemini API, under Google's terms. If you pick the on-device translator
+        in Chrome, translation happens in your browser instead.</li>
+      <li><strong>Not stored:</strong> OverHeard doesn't save transcripts or translations. The server keeps
+        recent translations briefly in memory to answer repeated phrases faster, and they are gone when it
+        restarts. Its logs record only counts, such as how many translations were made, never the text or your
+        IP address.</li>
+      <li><strong>In your browser:</strong> your settings (languages, the names used in Conversation mode, and the caption window layout)
+        are saved on your device, plus a random ID for the current tab, used to keep one person from overloading
+        the translators.</li>
+    </ul>
+    <p>Because speech can include anything said in the room, avoid saying sensitive personal information while
+    OverHeard is listening.</p>
     <p><strong>BibleViz</strong> runs in your browser and collects nothing.</p>
 
     <h2>6. Changes</h2>

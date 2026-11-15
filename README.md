@@ -9,7 +9,7 @@ The home page for the classroom apps:
 | AllAboard | https://allaboard.ai.studio |
 | OverBoard | https://bpmdata.github.io/OverBoard/ ([repo](https://github.com/BPMData/OverBoard)) |
 | BibleViz | https://bpmdata.github.io/BibleViz/ ([repo](https://github.com/BPMData/BibleViz)) |
-| OverHeard | Not published yet |
+| OverHeard | https://over-heard.ai.studio |
 
 Also here:
 
