@@ -128,10 +128,13 @@
       <li><strong>Speech to text</strong> uses your browser's built-in speech recognition. In Chrome and Edge, the
         browser may send the audio to Google or Microsoft to recognize it, under their terms. OverHeard never
         receives or records audio.</li>
-      <li><strong>Translation:</strong> the recognized text is sent to OverHeard's server, which translates it
-        with Google Translate or Google's Gemini API, under Google's terms. OverHeard uses a paid Gemini API
-        account, and under Google's terms for paid use, Google does not use that text to improve its products.
-        If you pick the on-device translator in Chrome, translation happens in your browser instead.</li>
+      <li><strong>Translation, on your computer (recommended):</strong> in Chrome on a Windows or Mac computer,
+        OverHeard can translate with the browser's built-in translator, using language packs downloaded to the
+        computer. The text never leaves your device.</li>
+      <li><strong>Translation, online:</strong> otherwise, the recognized text is sent to OverHeard's server, which
+        tries Google Translate first, then Google's paid Cloud Translation API, then Google's paid Gemini API if
+        the others fail. Each processes the text under Google's terms. Under Google's terms for its paid
+        services, Google does not use text sent to Cloud Translation or Gemini to improve its products.</li>
       <li><strong>Not stored:</strong> OverHeard doesn't save transcripts or translations. The server keeps
         recent translations briefly in memory to answer repeated phrases faster, and they are gone when it
         restarts. Its logs record only counts, such as how many translations were made, never the text or your
