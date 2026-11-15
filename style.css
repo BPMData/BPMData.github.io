@@ -51,3 +51,4 @@ table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 8px 0; 
 th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
 th { font-family: var(--display); font-weight: 500; }
 .tablewrap { overflow-x: auto; }
+code { overflow-wrap: anywhere; }
