@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy</title>
-<meta name="description" content="What AllAboard, OverBoard and BibleViz collect, why, and how long it is kept.">
+<meta name="description" content="What AllAboard collects, how it uses Google Drive, and how long data is kept. Also covers OverBoard and BibleViz.">
 <link rel="icon" href="icons/allaboard/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="icons/allaboard/favicon.ico" sizes="any">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
@@ -15,79 +15,119 @@
   <a class="back" href="./">← All apps</a>
   <div class="doc">
     <h1>Privacy policy</h1>
-    <p class="muted">Covers AllAboard, OverBoard and BibleViz. Effective November 15, 2026.</p>
+    <p class="muted">AllAboard (<a href="https://allaboard.ai.studio">allaboard.ai.studio</a>), plus OverBoard and BibleViz.
+    Effective November 15, 2026.</p>
 
-    <p>These apps are free classroom tools. They have no ads, no analytics or tracking scripts, and nothing
-    is sold or shared for marketing. This page explains exactly what each app keeps.</p>
+    <p>AllAboard is a free, shared classroom whiteboard. Students join a room with a room code and a display
+    name; there are no accounts. AllAboard has no ads and no analytics or tracking scripts, and no data is sold
+    or shared for marketing. In Google's sign-in screens, AllAboard appears as <strong>AllAboard &amp;
+    OverBoard</strong>, the name these apps share.</p>
 
-    <h2>AllAboard</h2>
-    <p>AllAboard is a shared whiteboard, so the things people put in a room are stored on our server so that
-    everyone in the room can see them.</p>
+    <h2>1. What AllAboard stores</h2>
+    <p>A room is shared, so what people put in it is stored on AllAboard's server so everyone in the room can
+    see it.</p>
     <div class="tablewrap"><table>
       <tr><th>What</th><th>Why</th><th>Where and how long</th></tr>
-      <tr><td>The display name you type (it doesn't have to be a real name)</td><td>To show who drew or wrote what</td><td rowspan="4">On AllAboard's server (Google Cloud, United States). A room and everything in it is deleted automatically after 7 days with no activity. A teacher can clear a room at any time.</td></tr>
-      <tr><td>Drawings, text, stamps and chat messages in a room</td><td>To share them with the room</td></tr>
-      <tr><td>Worksheets a teacher uploads (images or PDF pages)</td><td>To show them on the board</td></tr>
-      <tr><td>The teacher PIN for a room</td><td>To let the teacher manage the room</td></tr>
-      <tr><td>A random ID, your name, and the room's teacher PIN, saved in your browser</td><td>So you rejoin as the same person after a reload</td><td>Only in your browser, until you clear site data</td></tr>
+      <tr><td>The display name you type (it doesn't have to be a real name)</td><td>To show who drew or wrote what</td>
+        <td rowspan="4">AllAboard's server and its backup, on Google Cloud in the United States. A room and
+        everything in it, backup included, is deleted automatically after <strong>7 days with no activity</strong>.
+        The room's teacher can clear it, or remove a student's work, at any time.</td></tr>
+      <tr><td>Drawings, text, stamps and chat messages, on the main board and breakout boards</td><td>To share them with the room</td></tr>
+      <tr><td>Worksheets the teacher adds (uploaded images and PDF pages, or files imported from Google Drive)</td><td>To show them on the board</td></tr>
+      <tr><td>The room's teacher PIN</td><td>So only the teacher can manage the room</td></tr>
+      <tr><td>In your own browser: a random ID, your display name, the teacher PIN for rooms you teach, and the
+        Google Drive file ID of a room's last Drive save (see below)</td><td>So you rejoin as the same person, and
+        Save to Drive updates the same file</td><td>Only on your device, until you clear the site's data</td></tr>
     </table></div>
-    <p>Like any website, the hosting service (Google Cloud) keeps standard request logs, such as IP address
-    and time of request, for operating and securing the service.</p>
-    <p>A teacher can save a room as a <code>.json</code> or image file. That file goes to the teacher's own device
-    (or Google Drive, below), not to us.</p>
+    <p>Like any website, the hosting service (Google Cloud) keeps standard request logs, such as IP address and
+    time, to run and protect the service.</p>
+    <p>A teacher can download a room as a <code>.json</code> snapshot or an image. That file goes to the
+    teacher's own device or Google Drive, not to us.</p>
 
-    <h3>Google Drive and Sign in with Google (optional)</h3>
-    <p>AllAboard works without a Google account. If a teacher chooses to use the Google Drive buttons:</p>
+    <h2>2. Google user data (Google Drive)</h2>
+    <p>AllAboard works fully without a Google account. Google Drive is an optional feature for the
+    <strong>teacher of a room</strong>; students never see these buttons.</p>
+
+    <h3>What AllAboard can access</h3>
+    <p>AllAboard asks Google for one permission: <code>https://www.googleapis.com/auth/drive.file</code>
+    ("See, edit, create and delete only the specific Google Drive files you use with this app"). With it,
+    AllAboard can access only:</p>
     <ul>
-      <li>AllAboard asks for the <code>drive.file</code> permission only. It can open <strong>only</strong> the
-        files you pick in Google's file picker, and the room snapshots AllAboard saves for you. It cannot see the
-        rest of your Drive.</li>
-      <li>Files are opened and saved directly between your browser and Google. Google Drive data never passes
-        through or is stored on AllAboard's server. The exception is a worksheet you import: its pages are added
-        to your room just like an uploaded worksheet, as described above.</li>
-      <li>Google's sign-in token is kept in your browser's memory only, and is gone when you close or reload the
-        page. AllAboard never stores it.</li>
-      <li>If you use <strong>Sign in with Google</strong> on the join screen, AllAboard reads your first name only
-        to fill in the name box. Nothing else from your account is used or stored.</li>
-      <li>You can remove AllAboard's access at any time at
-        <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+      <li>the files you choose yourself in Google's file picker, and</li>
+      <li>the room snapshot files AllAboard saves to your Drive at your request.</li>
     </ul>
+    <p>AllAboard cannot see, list or search the rest of your Drive. It does not request your name, email
+    address, profile picture, contacts or any other Google account information.</p>
+
+    <h3>How AllAboard uses it</h3>
+    <div class="tablewrap"><table>
+      <tr><th>Button</th><th>What happens</th></tr>
+      <tr><td><strong>From Drive</strong></td><td>Opens Google's file picker, showing only Google Slides and PDF files.
+        AllAboard downloads the file you pick (Google converts Slides to PDF), turns the pages you choose into
+        images in your browser, and adds them to your room as a worksheet.</td></tr>
+      <tr><td><strong>Save to Drive</strong></td><td>Saves a snapshot of your room to your Drive as a
+        <code>.json</code> file: its drawings, text, chat, display names, worksheets and breakout boards. Saving
+        the same room again updates that file instead of making a new one.</td></tr>
+      <tr><td><strong>Open from Drive</strong></td><td>Opens Google's file picker, showing only <code>.json</code>
+        files. AllAboard reads the snapshot you pick and shows a preview; nothing changes in your room until you
+        confirm.</td></tr>
+    </table></div>
+    <p>Google Drive data is used only for these features, only when you click them.</p>
+
+    <h3>Where it goes and how long it's kept</h3>
+    <ul>
+      <li>Files move directly between your browser and Google. Your Drive files and Google sign-in are never
+        sent to or stored on AllAboard's server.</li>
+      <li>The exception is content you deliberately add to a room: worksheet pages from <strong>From Drive</strong>,
+        or a snapshot you apply with <strong>Open from Drive</strong>. That becomes room content, visible to the
+        room and deleted with it, as in section 1.</li>
+      <li>Google's access token is kept in your browser's memory only. It expires within about an hour and is gone
+        when you reload or close the page. AllAboard never saves it.</li>
+      <li>The only Drive information kept in your browser is the ID of each room's last saved snapshot, so the next
+        save updates the same file.</li>
+      <li>Snapshots saved to your Drive are yours. They stay in your Drive until you delete them there.</li>
+    </ul>
+
+    <h3>Sharing</h3>
+    <p>AllAboard does not sell, rent or share Google user data with anyone, does not use it for advertising,
+    and does not use it to train AI models. No person reads it. The only people who see Drive content are the
+    people in the room you choose to add it to.</p>
+
+    <h3>Removing access</h3>
+    <p>You can remove AllAboard's access to your Google account at any time at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> (look for "AllAboard
+    &amp; OverBoard"). To remove Drive content from a room, clear the room or let it expire after 7 days.</p>
+
+    <h3>Limited Use</h3>
     <p>AllAboard's use and transfer of information received from Google APIs adheres to the
     <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data
-    Policy</a>, including the Limited Use requirements. Google user data is used only to provide the features
-    you choose, is not used for advertising, is not sold, and is not read by people.</p>
+    Policy</a>, including the Limited Use requirements.</p>
 
-    <h2>OverBoard</h2>
-    <p>OverBoard runs entirely in your browser. The PDFs, pictures and worksheets you open, your ink, and your
-    settings stay on your computer, in the browser's storage or in files you choose to save. Nothing is
-    uploaded.</p>
-    <h3>"Board not working?" reports (optional)</h3>
-    <p>If you choose to send a report, it includes the board brand and model you enter, the problems you tick,
-    what the board reported during the touch test, and technical details about the browser and computer (such
-    as browser and operating system version, screen size, and language settings). You may also add comments and an email address.</p>
-    <ul>
-      <li>The board, computer and test details are posted as a public issue on OverBoard's GitHub page so the
-        problem can be fixed.</li>
-      <li>Your comments and email address are <strong>never</strong> made public. They are emailed privately to
-        the OverBoard reports inbox.</li>
-      <li>If you give an email address, it is used only to send you a thank-you and one follow-up when there is a
-        fix to try. Ask us to delete it at any time.</li>
-    </ul>
+    <h2>3. Students and schools</h2>
+    <p>AllAboard doesn't ask students for an email address, account or real name; a display name can be anything.
+    Because rooms are shared, students should not put personal information in names, drawings or chat. Teachers
+    should follow their school's rules for classroom technology. School Google accounts may need an administrator
+    to allow AllAboard before the Drive buttons work. If personal information about a child is in a room, the
+    teacher can clear the room, or contact us and we will delete it.</p>
 
-    <h2>BibleViz</h2>
-    <p>BibleViz runs in your browser and collects nothing. Your searches are not sent anywhere.</p>
+    <h2>4. Security</h2>
+    <p>AllAboard is served only over HTTPS. Teacher actions in a room require the room's teacher PIN.</p>
 
-    <h2>Students and schools</h2>
-    <p>These apps don't ask students for an email address, account or real name. A display name can be
-    anything. Because AllAboard rooms are shared, students should not put personal information in names,
-    drawings or chat. Teachers should follow their school's rules on classroom technology. If you believe a
-    child's personal information is in an AllAboard room, a teacher can clear the room, or contact us and we
-    will delete it.</p>
+    <h2>5. OverBoard and BibleViz</h2>
+    <p><strong>OverBoard</strong> (<a href="https://bpmdata.github.io/OverBoard/">bpmdata.github.io/OverBoard</a>)
+    runs entirely in your browser. Your PDFs, worksheets, ink and settings stay on your computer; nothing is
+    uploaded. If you choose to send a <strong>Board not working?</strong> report, it includes the board brand and
+    model you enter, the problems you tick, what the board reported during the touch test, and technical details
+    about the browser and computer (such as browser and operating system version, screen size, and language
+    settings). Those details are posted as a public issue on OverBoard's GitHub page. Any comments and email
+    address you add are never made public: they are emailed privately to the OverBoard reports inbox, and the
+    email address is used only for a thank-you and one follow-up when there is a fix to try.</p>
+    <p><strong>BibleViz</strong> runs in your browser and collects nothing.</p>
 
-    <h2>Changes</h2>
+    <h2>6. Changes</h2>
     <p>If this policy changes, the new version will be posted here with a new effective date.</p>
 
-    <h2>Contact</h2>
+    <h2>7. Contact</h2>
     <p>Questions or deletion requests: <a href="mailto:overboard.reporting@gmail.com">overboard.reporting@gmail.com</a>.</p>
   </div>
   <footer>
