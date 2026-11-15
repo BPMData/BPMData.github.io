@@ -35,9 +35,9 @@
       <tr><td>Drawings, text, stamps and chat messages, on the main board and breakout boards</td><td>To share them with the room</td></tr>
       <tr><td>Worksheets the teacher adds (uploaded images and PDF pages, or files imported from Google Drive)</td><td>To show them on the board</td></tr>
       <tr><td>The room's teacher PIN</td><td>So only the teacher can manage the room</td></tr>
-      <tr><td>In your own browser: a random ID, your display name, the teacher PIN for rooms you teach, and the
-        Google Drive file ID of a room's last Drive save (see below)</td><td>So you rejoin as the same person, and
-        Save to Drive updates the same file</td><td>Only on your device, until you clear the site's data</td></tr>
+      <tr><td>In your own browser: a random ID, your display name, the teacher PIN for rooms you teach, and
+        Google Drive save details (see below)</td><td>So you rejoin as the same person, and Save Room to Drive
+        starts where you left off</td><td>Only on your device, until you clear the site's data</td></tr>
     </table></div>
     <p>Like any website, the hosting service (Google Cloud) keeps standard request logs, such as IP address and
     time, to run and protect the service.</p>
@@ -53,7 +53,8 @@
     ("See, edit, create and delete only the specific Google Drive files you use with this app"). With it,
     AllAboard can access only:</p>
     <ul>
-      <li>the files you choose yourself in Google's file picker, and</li>
+      <li>the files you choose yourself in Google's file picker,</li>
+      <li>the folders you choose to save rooms into, and</li>
       <li>the room snapshot files AllAboard saves to your Drive at your request.</li>
     </ul>
     <p>AllAboard cannot see, list or search the rest of your Drive. It does not request your name, email
@@ -62,13 +63,14 @@
     <h3>How AllAboard uses it</h3>
     <div class="tablewrap"><table>
       <tr><th>Button</th><th>What happens</th></tr>
-      <tr><td><strong>From Drive</strong></td><td>Opens Google's file picker, showing only Google Slides and PDF files.
+      <tr><td><strong>Slides / PDF from Drive</strong></td><td>Opens Google's file picker, showing only Google Slides and PDF files.
         AllAboard downloads the file you pick (Google converts Slides to PDF), turns the pages you choose into
         images in your browser, and adds them to your room as a worksheet.</td></tr>
-      <tr><td><strong>Save to Drive</strong></td><td>Saves a snapshot of your room to your Drive as a
-        <code>.json</code> file: its drawings, text, chat, display names, worksheets and breakout boards. Saving
-        the same room again updates that file instead of making a new one.</td></tr>
-      <tr><td><strong>Open from Drive</strong></td><td>Opens Google's file picker, showing only <code>.json</code>
+      <tr><td><strong>Save Room to Drive</strong></td><td>You choose a file name and a folder (with Google's folder
+        picker), and AllAboard saves a snapshot of your room there as a <code>.json</code> file: its drawings,
+        text, chat, display names, worksheets and breakout boards. Saving the same room again with the same name
+        and folder replaces that file.</td></tr>
+      <tr><td><strong>Open Room from Drive</strong></td><td>Opens Google's file picker, showing only <code>.json</code>
         files. AllAboard reads the snapshot you pick and shows a preview; nothing changes in your room until you
         confirm.</td></tr>
     </table></div>
@@ -78,13 +80,14 @@
     <ul>
       <li>Files move directly between your browser and Google. Your Drive files and Google sign-in are never
         sent to or stored on AllAboard's server.</li>
-      <li>The exception is content you deliberately add to a room: worksheet pages from <strong>From Drive</strong>,
-        or a snapshot you apply with <strong>Open from Drive</strong>. That becomes room content, visible to the
+      <li>The exception is content you deliberately add to a room: worksheet pages from <strong>Slides / PDF from
+        Drive</strong>, or a snapshot you apply with <strong>Open Room from Drive</strong>. That becomes room content, visible to the
         room and deleted with it, as in section 1.</li>
       <li>Google's access token is kept in your browser's memory only. It expires within about an hour and is gone
         when you reload or close the page. AllAboard never saves it.</li>
-      <li>The only Drive information kept in your browser is the ID of each room's last saved snapshot, so the next
-        save updates the same file.</li>
+      <li>The only Drive information kept in your browser is, for each room, the ID, name and folder of its last
+        saved snapshot, and the last folder you saved to. That lets the next save start in the same folder and
+        replace the same file.</li>
       <li>Snapshots saved to your Drive are yours. They stay in your Drive until you delete them there.</li>
     </ul>
 
