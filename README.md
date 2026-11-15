@@ -2,6 +2,20 @@
 
 GitHub Pages site: https://bpmdata.github.io/
 
-`index.html` lets you search the King James New Testament (`nt_bible_clean.txt`) for any words or phrases and plots where each one appears, using Plotly. It runs entirely in the browser, so no server is needed.
+The home page for the classroom apps:
 
-`main.py` is the original Python script that made the first, fixed version of the chart. The [BibleViz](https://github.com/BPMData/BibleViz) repo has the older Streamlit search app.
+| App | Where it lives |
+|---|---|
+| AllAboard | https://allaboard.ai.studio |
+| OverBoard | https://bpmdata.github.io/OverBoard/ ([repo](https://github.com/BPMData/OverBoard)) |
+| BibleViz | https://bpmdata.github.io/BibleViz/ ([repo](https://github.com/BPMData/BibleViz)) |
+| OverHeard | Not published yet |
+
+Also here:
+
+- `privacy.html` and `terms.html`: the privacy policy and terms of service for all the apps. Google's OAuth
+  consent screen links to them, so keep these URLs stable.
+- `icons/`: app icons, copied from `branding/exports/` in the app repos. To change an icon, edit
+  `branding/generate-icons.mjs` there, rebuild, and copy the new files here.
+
+Plain HTML and CSS; no build step. `.nojekyll` turns off GitHub's Jekyll processing.
