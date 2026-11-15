@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>BibleViz</title>
+  <rect width="64" height="64" rx="13" fill="#7A1F1F"/>
+  <path d="M32 20 C26 16 17 16 11 18 V46 C17 44 26 44 32 48 C38 44 47 44 53 46 V18 C47 16 38 16 32 20 Z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/>
+  <path d="M32 20 V48" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+  <g fill="#fff"><circle cx="18" cy="27" r="2.4"/><circle cx="24" cy="33" r="2.4"/><circle cx="19" cy="38" r="2.4"/><circle cx="40" cy="25" r="2.4"/><circle cx="45" cy="31" r="2.4"/><circle cx="39" cy="37" r="2.4"/></g>
+</svg>

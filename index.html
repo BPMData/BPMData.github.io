@@ -3,319 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bible Finder</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
-<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
-<style>
-  :root {
-    --bg: #fffdf8;
-    --ink: #2b1d14;
-    --accent: maroon;
-    --muted: #7a6455;
-    --line: #e6d9c8;
-    --tip-bg: #ffffff;
-    --mark: #ffe08a;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 16px/1.5 Georgia, "Times New Roman", serif;
-  }
-  main { max-width: 1400px; margin: 0 auto; padding: 24px 16px 40px; }
-  h1 { color: var(--accent); font-size: 1.7rem; margin: 0 0 4px; }
-  .sub { color: var(--muted); margin: 0 0 18px; }
-  form { display: flex; gap: 8px; flex-wrap: wrap; }
-  input[type=text] {
-    flex: 1 1 420px; min-width: 0;
-    font: inherit; padding: 10px 12px;
-    border: 1px solid var(--line); border-radius: 6px; background: #fff;
-  }
-  input[type=text]:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
-  button {
-    font: inherit; padding: 10px 18px; border: 0; border-radius: 6px;
-    background: var(--accent); color: #fff; cursor: pointer;
-  }
-  button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--line); }
-  details { margin: 10px 0 0; color: var(--muted); font-size: 0.92rem; }
-  details summary { cursor: pointer; }
-  details ul { margin: 6px 0 0; padding-left: 20px; }
-  #status { margin: 14px 0 6px; color: var(--muted); min-height: 1.5em; }
-  #chart { width: 100%; }
-  footer { margin-top: 20px; color: var(--muted); font-size: 0.85rem; }
-  footer a { color: var(--accent); }
-
-  /* Custom hover box: wraps text and stays on screen */
-  #tip {
-    position: fixed; z-index: 10; pointer-events: none; display: none;
-    max-width: min(460px, calc(100vw - 24px));
-    max-height: calc(100vh - 24px); overflow: hidden;
-    background: var(--tip-bg); color: var(--ink);
-    border: 2px solid var(--accent); border-radius: 8px;
-    padding: 10px 12px; box-shadow: 0 6px 20px rgba(0,0,0,.18);
-    font-size: 15px; line-height: 1.45;
-    overflow-wrap: anywhere;
-  }
-  #tip .ref { font-weight: bold; color: var(--accent); margin-bottom: 4px; }
-  #tip mark { background: var(--mark); color: inherit; padding: 0 1px; }
-</style>
+<title>BPMData Classroom Apps</title>
+<meta name="description" content="Free classroom tools: AllAboard, a shared whiteboard; OverBoard, smartboard ink that sticks to the page; OverHeard, live classroom captions and translation; and BibleViz.">
+<link rel="icon" href="icons/allaboard/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/allaboard/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="icons/allaboard/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
-  <h1>Search the New Testament and see your results</h1>
-  <p class="sub">Type names, words or phrases separated by commas. Each dot is one mention; hover over a dot to read the verse.</p>
+  <h1>Classroom apps</h1>
+  <p class="lede">Free tools for teaching. They run in the browser, with no accounts and no ads.</p>
 
-  <form id="search">
-    <input id="q" type="text" autocomplete="off" spellcheck="false"
-      aria-label="Words or phrases to search for, separated by commas"
-      placeholder="For example: Jesus, Mary, Paul, love thy neighbour, poor">
-    <button type="submit">Search</button>
-    <button type="button" class="secondary" id="reset">Reset to examples</button>
-  </form>
+  <div class="apps">
+    <a class="app" href="https://allaboard.ai.studio">
+      <img src="icons/allaboard/favicon.svg" alt="" width="72" height="72">
+      <div>
+        <h2>AllAboard</h2>
+        <p>A shared whiteboard for the whole class. Students join with a room code and draw, write and chat together, with worksheets, breakout boards and teacher controls.</p>
+        <span class="go">Open AllAboard →</span>
+      </div>
+    </a>
 
-  <details>
-    <summary>Search tips</summary>
-    <ul>
-      <li>Capitalization doesn't matter, but spelling does. This is the King James Version, so it uses older British spellings (<em>neighbour</em>, not <em>neighbor</em>).</li>
-      <li><strong>Peter</strong> also finds <em>Simon</em>. <strong>Satan</strong> also finds <em>the devil</em> and <em>tempter</em>.</li>
-      <li>If you search a longer phrase and a shorter one inside it (for example <strong>Mary Magdalene</strong> and <strong>Mary</strong>), mentions of the longer phrase aren't counted again under the shorter one.</li>
-      <li><strong>Mark</strong> also finds the ordinary word "mark" (see Revelation).</li>
-      <li>The address bar updates with your search, so you can copy the link to share it.</li>
-    </ul>
-  </details>
+    <a class="app" href="https://bpmdata.github.io/OverBoard/">
+      <img src="icons/overboard/favicon.svg" alt="" width="72" height="72">
+      <div>
+        <h2>OverBoard</h2>
+        <p>Smartboard ink that sticks to the page. Write on a PDF or worksheet, scroll, and your ink scrolls with it. Palm eraser, highlighter and PDF export.</p>
+        <span class="go">Open OverBoard →</span>
+      </div>
+    </a>
 
-  <div id="status">Loading the text…</div>
-  <div id="chart"></div>
+    <a class="app" href="https://bpmdata.github.io/BibleViz/">
+      <img src="icons/bibleviz/favicon.svg" alt="" width="72" height="72">
+      <div>
+        <h2>BibleViz</h2>
+        <p>Search the King James New Testament for names, words or phrases and see where each one appears, book by book.</p>
+        <span class="go">Open BibleViz →</span>
+      </div>
+    </a>
+
+    <a class="app" href="https://over-heard.ai.studio/">
+      <img src="icons/overheard/favicon.svg" alt="" width="72" height="72">
+      <div>
+        <h2>OverHeard</h2>
+        <p>Live captions and translation for multilingual learners. Put what you say on the projector in English and students' languages, or hold a two-way translated conversation.</p>
+        <span class="go">Open OverHeard →</span>
+      </div>
+    </a>
+  </div>
 
   <footer>
-    Text: King James New Testament from <a href="https://www.gutenberg.org/ebooks/10">Project Gutenberg</a>.
-    Code: <a href="https://github.com/BPMData/BPMData.github.io">GitHub</a>.
+    <a href="privacy.html">Privacy policy</a>
+    <a href="terms.html">Terms of service</a>
+    <a href="https://github.com/BPMData">GitHub</a>
+    <a href="mailto:overboard.reporting@gmail.com">overboard.reporting@gmail.com</a>
   </footer>
 </main>
-<div id="tip" role="tooltip"></div>
-
-<script>
-const DEFAULT_TERMS = 'Jesus, Christ, Peter, Paul, John the Baptist, John, Mary Magdalene, Mary, Judas Iscariot, Judas, Pilate, Matthew, Mark, Luke, James, Thomas, Satan, abortion';
-
-// Extra spellings searched along with a term.
-const ALIASES = {
-  'peter': ['Simon'],
-  'satan': ['the devil', 'tempter'],
-};
-
-const BOOKS = [
-  ['The Gospel According to Saint Matthew', 'Matthew', 'Matthew'],
-  ['The Gospel According to Saint Mark', 'Mark', 'Mark'],
-  ['The Gospel According to Saint Luke', 'Luke', 'Luke'],
-  ['The Gospel According to Saint John', 'John', 'John'],
-  ['The Acts of the Apostles', 'Acts', 'Acts'],
-  ['The Epistle of Paul the Apostle to the Romans', 'Romans', 'Romans'],
-  ['The First Epistle of Paul the Apostle to the Corinthians', '1 Corinthians', ''],
-  ['The Second Epistle of Paul the Apostle to the Corinthians', '2 Corinthians', ''],
-  ['The Epistle of Paul the Apostle to the Galatians', 'Galatians', ''],
-  ['The Epistle of Paul the Apostle to the Ephesians', 'Ephesians', 'The Epistles'],
-  ['The Epistle of Paul the Apostle to the Philippians', 'Philippians', ''],
-  ['The Epistle of Paul the Apostle to the Colossians', 'Colossians', ''],
-  ['The First Epistle of Paul the Apostle to the Thessalonians', '1 Thessalonians', ''],
-  ['The Second Epistle of Paul the Apostle to the Thessalonians', '2 Thessalonians', ''],
-  ['The First Epistle of Paul the Apostle to Timothy', '1 Timothy', ''],
-  ['The Second Epistle of Paul the Apostle to Timothy', '2 Timothy', ''],
-  ['The Epistle of Paul the Apostle to Titus', 'Titus', ''],
-  ['The Epistle of Paul the Apostle to Philemon', 'Philemon', ''],
-  ['The Epistle of Paul the Apostle to the Hebrews', 'Hebrews', 'Hebrews'],
-  ['The General Epistle of James', 'James', ''],
-  ['The First Epistle General of Peter', '1 Peter', ''],
-  ['The Second General Epistle of Peter', '2 Peter', ''],
-  ['The First Epistle General of John', '1 John', ''],
-  ['The Second Epistle General of John', '2 John', ''],
-  ['The Third Epistle General of John', '3 John', ''],
-  ['The General Epistle of Jude', 'Jude', ''],
-  ['The Revelation of Saint John the Divine', 'Revelation', 'Revelation'],
-];
-
-const COLORS = ['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#a65628','#f781bf','#999999','#1b9e77','#d95f02','#7570b3','#e7298a','#66a61e','#e6ab02'];
-
-let text = '', bookStarts = [], verseStarts = [];
-
-const $ = id => document.getElementById(id);
-const escapeHtml = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const escapeRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-// Last index i with arr[i] <= x.
-function floorIndex(arr, x) {
-  let lo = 0, hi = arr.length - 1, ans = 0;
-  while (lo <= hi) {
-    const mid = (lo + hi) >> 1;
-    if (arr[mid] <= x) { ans = mid; lo = mid + 1; } else hi = mid - 1;
-  }
-  return ans;
-}
-
-function termRegex(term) {
-  // Phrases may wrap across lines, so any run of spaces matches any whitespace.
-  const body = term.trim().split(/\s+/).map(escapeRe).join('\\s+');
-  const pre = /^\w/.test(term) ? '\\b' : '';
-  const post = /\w$/.test(term) ? '\\b' : '';
-  return pre + body + post;
-}
-
-function findAll(term) {
-  const variants = [term, ...(ALIASES[term.toLowerCase()] || [])];
-  const re = new RegExp(variants.map(termRegex).join('|'), 'gi');
-  const out = [];
-  for (const m of text.matchAll(re)) out.push([m.index, m.index + m[0].length]);
-  return out;
-}
-
-// The verse containing a match, with the matched words highlighted.
-let versePosCache = null;
-function verseFor(pos, matchEnd) {
-  if (!versePosCache) versePosCache = verseStarts.map(v => v.pos);
-  const vi = floorIndex(versePosCache, pos);
-  const v = verseStarts[vi];
-  const end = vi + 1 < verseStarts.length ? verseStarts[vi + 1].pos : text.length;
-  const book = BOOKS[floorIndex(bookStarts, pos)][1];
-  const bodyStart = Math.min(v.pos + v.label.length, pos);
-  const clean = s => escapeHtml(s.replace(/\s+/g, ' '));
-  const html = (clean(text.slice(bodyStart, pos)) + '<mark>' + clean(text.slice(pos, matchEnd)) + '</mark>' + clean(text.slice(matchEnd, end))).trim();
-  return { ref: `${book} ${v.label.trim()}`, html };
-}
-
-function search(raw) {
-  const terms = [...new Set(raw.split(',').map(t => t.trim()).filter(Boolean))];
-  const results = terms.map(term => ({ term, hits: findAll(term) }));
-
-  // Don't count "Mary Magdalene" again under "Mary", etc.
-  for (const r of results) {
-    const longer = results.filter(o => o !== r && o.term.length > r.term.length &&
-      new RegExp(termRegex(r.term), 'i').test(o.term));
-    if (!longer.length) continue;
-    const spans = longer.flatMap(o => o.hits);
-    r.hits = r.hits.filter(([s, e]) => !spans.some(([ls, le]) => s >= ls && e <= le));
-  }
-  return results;
-}
-
-function draw(raw) {
-  const results = search(raw);
-  const chart = $('chart');
-  if (!results.length) { Plotly.purge(chart); $('status').textContent = 'Type something to search for.'; return; }
-
-  const total = text.length;
-  const pct = p => 100 * p / total;
-  const traces = results.map((r, i) => ({
-    type: 'scattergl',
-    mode: 'markers',
-    name: r.term,
-    x: r.hits.map(([s]) => pct(s)),
-    y: r.hits.map(() => r.term),
-    customdata: r.hits,
-    hoverinfo: 'none',
-    marker: { color: COLORS[i % COLORS.length], size: 8, opacity: 0.85 },
-  }));
-
-  const bookX = bookStarts.map(pct);
-  const shapes = [], annotations = [];
-  bookX.forEach((x0, i) => {
-    const x1 = i + 1 < bookX.length ? bookX[i + 1] : 100;
-    shapes.push({ type: 'rect', xref: 'x', yref: 'paper', x0, x1, y0: 0, y1: 1, line: { width: 0 },
-      fillcolor: i % 2 ? 'peachpuff' : 'mediumseagreen', opacity: 0.15, layer: 'below' });
-    shapes.push({ type: 'line', xref: 'x', yref: 'paper', x0, x1: x0, y0: 0, y1: 1, line: { color: 'chocolate', width: 1 } });
-    if (BOOKS[i][2]) annotations.push({ x: x0, y: 1.0, yref: 'paper', yanchor: 'bottom', xanchor: 'left',
-      text: BOOKS[i][2], showarrow: false, font: { color: 'chocolate' } });
-  });
-  results.forEach(r => annotations.push({ xref: 'paper', x: 1.005, xanchor: 'left', y: r.term, yref: 'y',
-    text: String(r.hits.length), showarrow: false, font: { color: 'maroon' } }));
-  annotations.push({ xref: 'paper', x: 1.005, xanchor: 'left', yref: 'paper', y: 1.0, yanchor: 'bottom',
-    text: 'Total', showarrow: false, font: { color: 'maroon' } });
-
-  const layout = {
-    height: Math.max(320, 140 + results.length * 34),
-    margin: { l: 10, r: 60, t: 40, b: 60 },
-    paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: '#fff',
-    showlegend: false,
-    hovermode: 'closest',
-    xaxis: { range: [0, 100], title: { text: 'Position in the New Testament (%)' }, color: 'maroon', fixedrange: true, showgrid: false },
-    yaxis: { type: 'category', automargin: true, categoryorder: 'array', categoryarray: results.map(r => r.term).reverse(),
-      color: 'maroon', fixedrange: true },
-    shapes, annotations,
-    font: { family: 'Georgia, serif' },
-  };
-  Plotly.react(chart, traces, layout, { responsive: true, displaylogo: false, modeBarButtonsToRemove: ['select2d', 'lasso2d'] });
-
-  const totalHits = results.reduce((n, r) => n + r.hits.length, 0);
-  $('status').textContent = `${totalHits.toLocaleString()} mention${totalHits === 1 ? '' : 's'} found.` +
-    (raw.trim() !== DEFAULT_TERMS && results.some(r => !r.hits.length) ? ' (Zero results? Check the spelling: the KJV uses older forms.)' : '');
-
-  if (!chart._tipBound) bindTooltip(chart);
-}
-
-function bindTooltip(chart) {
-  chart._tipBound = true;
-  const tip = $('tip');
-  let last = null;
-
-  const place = (cx, cy) => {
-    const gap = 16, pad = 8;
-    const w = tip.offsetWidth, h = tip.offsetHeight;
-    const vw = window.innerWidth, vh = window.innerHeight;
-    // Prefer below-right of the pointer; flip or clamp to stay on screen.
-    let left = cx + gap, top = cy + gap;
-    if (left + w > vw - pad) left = Math.max(pad, cx - gap - w);
-    if (left + w > vw - pad) left = Math.max(pad, vw - pad - w);
-    if (top + h > vh - pad) top = cy - gap - h;
-    if (top < pad) top = Math.max(pad, vh - pad - h);
-    tip.style.left = left + 'px';
-    tip.style.top = top + 'px';
-  };
-
-  chart.on('plotly_hover', ev => {
-    const pt = ev.points[0];
-    const [s, e] = pt.customdata;
-    const v = verseFor(s, e);
-    tip.innerHTML = `<div class="ref">${escapeHtml(pt.data.name)} · ${escapeHtml(v.ref)}</div>${v.html}`;
-    tip.style.display = 'block';
-    last = ev.event;
-    if (last) place(last.clientX, last.clientY);
-  });
-  chart.on('plotly_unhover', () => { tip.style.display = 'none'; });
-  chart.addEventListener('mousemove', e => { if (tip.style.display === 'block') place(e.clientX, e.clientY); });
-  chart.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
-  window.addEventListener('scroll', () => { tip.style.display = 'none'; }, { passive: true });
-}
-
-function runFromInput(push) {
-  const q = $('q').value;
-  if (push) {
-    const url = new URL(location.href);
-    if (q.trim() && q !== DEFAULT_TERMS) url.searchParams.set('q', q); else url.searchParams.delete('q');
-    history.replaceState(null, '', url);
-  }
-  draw(q);
-}
-
-async function init() {
-  try {
-    const res = await fetch('nt_bible_clean.txt');
-    if (!res.ok) throw new Error(res.status);
-    text = (await res.text()).replace(/\r/g, '');
-  } catch (err) {
-    $('status').textContent = 'Could not load the Bible text. Try reloading the page.';
-    return;
-  }
-
-  bookStarts = BOOKS.map(([title]) => text.indexOf('\n' + title + '\n') + 1);
-  for (const m of text.matchAll(/(?<=^|\s)(\d+:\d+) /g)) verseStarts.push({ pos: m.index, label: m[0] });
-
-  $('q').value = new URLSearchParams(location.search).get('q') || DEFAULT_TERMS;
-  runFromInput(false);
-
-  $('search').addEventListener('submit', e => { e.preventDefault(); runFromInput(true); });
-  $('reset').addEventListener('click', () => { $('q').value = DEFAULT_TERMS; runFromInput(true); });
-}
-
-init();
-</script>
 </body>
 </html>

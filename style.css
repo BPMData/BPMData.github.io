@@ -1,0 +1,54 @@
+:root {
+  --bg: #F5F7FA; --panel: #FFFFFF; --fg: #16202B; --muted: #5B6878; --line: #DCE2EA; --link: #145DA0;
+  --display: "Space Grotesk", system-ui, sans-serif; --body: "Inter", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161C; --panel: #18202A; --fg: #E7ECF2; --muted: #93A0B0; --line: #2A3542; --link: #7FB6EA;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161C; --panel: #18202A; --fg: #E7ECF2; --muted: #93A0B0; --line: #2A3542; --link: #7FB6EA;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.6 var(--body);
+  padding: 40px max(16px, env(safe-area-inset-right, 0px)) 56px max(16px, env(safe-area-inset-left, 0px));
+}
+main { max-width: 860px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.2; text-wrap: balance; }
+h1 { font-size: clamp(28px, 6vw, 40px); margin: 0 0 8px; }
+h2 { font-size: 22px; margin: 40px 0 8px; }
+h3 { font-size: 17px; margin: 24px 0 4px; }
+p, li { max-width: 68ch; }
+a { color: var(--link); }
+.lede { color: var(--muted); font-size: 18px; margin: 0 0 32px; }
+.muted { color: var(--muted); }
+
+.apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 16px; }
+.app {
+  display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; align-items: start;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px;
+  color: inherit; text-decoration: none; transition: border-color .15s, transform .15s;
+}
+a.app:hover, a.app:focus-visible { border-color: var(--link); transform: translateY(-1px); }
+.app img { width: 72px; height: 72px; }
+.app h2 { margin: 2px 0 4px; font-size: 20px; }
+.app p { margin: 0; color: var(--muted); font-size: 15px; }
+.app .go { display: inline-block; margin-top: 8px; font-weight: 500; color: var(--link); font-size: 15px; }
+.app.soon { opacity: .7; }
+.app.soon .go { color: var(--muted); }
+
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.back { display: inline-block; margin-bottom: 24px; font-size: 15px; }
+.doc { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: clamp(18px, 4vw, 36px); }
+.doc h2:first-of-type { margin-top: 24px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 8px 0; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-family: var(--display); font-weight: 500; }
+.tablewrap { overflow-x: auto; }
+code { overflow-wrap: anywhere; }
