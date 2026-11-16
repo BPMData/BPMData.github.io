@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy</title>
-<meta name="description" content="What AllAboard collects, how it uses Google Drive, and how long data is kept. Also covers OverBoard and OverHeard.">
+<meta name="description" content="What AllAboard collects, how it uses Google Drive, and how long data is kept. Also covers OverBoard, OverHeard and AllHail.">
 <link rel="icon" href="icons/allaboard/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="icons/allaboard/favicon.ico" sizes="any">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
@@ -15,8 +15,8 @@
   <a class="back" href="./">← All apps</a>
   <div class="doc">
     <h1>Privacy policy</h1>
-    <p class="muted">AllAboard (<a href="https://allaboard.ai.studio">allaboard.ai.studio</a>), plus OverBoard and OverHeard.
-    Effective November 15, 2026.</p>
+    <p class="muted">AllAboard (<a href="https://allaboard.ai.studio">allaboard.ai.studio</a>), plus OverBoard, OverHeard and AllHail.
+    Effective November 16, 2026.</p>
 
     <p>AllAboard is a free, shared classroom whiteboard. Students join a room with a room code and a display
     name; there are no accounts. AllAboard has no ads and no analytics or tracking scripts, and no data is sold
@@ -116,7 +116,7 @@
     <h2>4. Security</h2>
     <p>AllAboard is served only over HTTPS. Teacher actions in a room require the room's teacher PIN.</p>
 
-    <h2>5. OverBoard and OverHeard</h2>
+    <h2>5. OverBoard, OverHeard and AllHail</h2>
     <p><strong>OverBoard</strong> (<a href="https://bpmdata.github.io/OverBoard/">bpmdata.github.io/OverBoard</a>)
     runs entirely in your browser. Your PDFs, worksheets, ink and settings stay on your computer; nothing is
     uploaded. If you choose to send a <strong>Board not working?</strong> report, it includes the board brand and
@@ -148,6 +148,27 @@
     </ul>
     <p>Because speech can include anything said in the room, avoid saying sensitive personal information while
     OverHeard is listening.</p>
+
+    <p><strong>AllHail</strong> (<a href="https://allhail.ai.studio">allhail.ai.studio</a>) turns photos into
+    spoken descriptions for blind and low-vision students. It has no accounts, no ads and no tracking, and
+    works like this:</p>
+    <ul>
+      <li><strong>Preparing photos on your device:</strong> before a photo is sent, your browser resizes it and
+        redraws it onto a fresh image so camera metadata (such as EXIF, GPS location and device details) never
+        leaves your device.</li>
+      <li><strong>Photo descriptions, online:</strong> when you ask AllHail to describe a photo, that stripped
+        image is sent to AllHail's server and forwarded to <a href="https://openrouter.ai">OpenRouter</a> with
+        data collection turned off, using Anthropic Claude Haiku, Google Gemini Flash-Lite or Z.ai GLM models.
+        AllHail's server doesn't save photos or descriptions (it keeps only a short-lived in-memory request
+        count by IP address to prevent overload). Don't photograph students' faces or private documents.</li>
+      <li><strong>Reading aloud, on your device:</strong> speech runs in your browser using your device's built-in
+        voice or the optional downloadable <strong>Kokoro</strong> or <strong>Piper</strong> offline voices. Once
+        downloaded, speech stays on your device. (Enabling Kokoro downloads model files from Hugging Face; Piper
+        downloads its runtime and voice files from AllHail's server.)</li>
+      <li><strong>In your browser:</strong> your voice and reading settings, plus your last 50 descriptions (with
+        small thumbnails) for offline replay, are stored only on your device until you delete them or clear the
+        site's data.</li>
+    </ul>
 
     <h2>6. Changes</h2>
     <p>If this policy changes, the new version will be posted here with a new effective date.</p>

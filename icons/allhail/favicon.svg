@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>AllHail</title>
+  <rect width="512" height="512" rx="112" fill="#cc5856"/>
+
+  <!-- Figure standing on the deck of the whiteboard boat -->
+  <circle cx="176" cy="92" r="27" fill="#ffffff"/>
+  <path
+    d="M158 130
+       C148 134 142 146 142 162
+       L140 234
+       C140 242 146 246 154 246
+       C161 246 166 241 168 232
+       L174 194
+       L182 232
+       C184 241 190 245 197 245
+       C205 245 211 239 210 231
+       L200 156
+       C198 140 188 128 172 128
+       Z"
+    fill="#ffffff"
+  />
+
+  <!-- Raised arm holding the megaphone handle -->
+  <path
+    d="M188 148
+       L224 148
+       L234 114"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="20"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Megaphone cone tilted slightly upward -->
+  <path
+    d="M214 95
+       L270 66
+       C276 63 282 67 282 74
+       L284 122
+       C284 129 278 133 272 130
+       L214 111
+       C209 109 209 97 214 95
+       Z"
+    fill="#ffffff"
+  />
+
+  <!-- Emanata shout lines bursting from the megaphone -->
+  <g stroke="#ffffff" stroke-width="20" stroke-linecap="round">
+    <line x1="306" y1="68" x2="366" y2="36"/>
+    <line x1="314" y1="96" x2="404" y2="86"/>
+    <line x1="306" y1="124" x2="370" y2="152"/>
+  </g>
+
+  <!-- Whiteboard boat hull -->
+  <g transform="translate(248, 296) rotate(-3) skewX(-10)">
+    <rect x="-152" y="-66" width="304" height="132" rx="28" fill="#ffffff"/>
+    <rect x="-132" y="-48" width="264" height="96" rx="16" fill="#ffffff" stroke="#ebbfbf" stroke-width="6"/>
+    <path
+      d="M-96 14
+         C-80 -22 -48 -24 -34 2
+         C-20 28 8 28 22 0
+         C34 -22 60 -20 72 2
+         C82 20 94 14 102 -6"
+      fill="none"
+      stroke="#cc5856"
+      stroke-width="18"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- Three waves -->
+  <g fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 456 C84 448 104 406 134 408 C152 409 160 424 148 438"/>
+    <path d="M188 466 C214 458 234 416 264 418 C282 419 290 434 278 448"/>
+    <path d="M318 452 C344 444 364 402 394 404 C412 405 420 420 408 434"/>
+  </g>
+</svg>
