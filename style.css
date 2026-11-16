@@ -29,7 +29,7 @@ a { color: var(--link); }
 .lede { color: var(--muted); font-size: 18px; margin: 0 0 32px; }
 .muted { color: var(--muted); }
 
-.apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 16px; }
+.apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
 .app {
   display: grid; grid-template-rows: auto 1fr; gap: 14px; align-items: start;
   background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px;
