@@ -6,7 +6,7 @@ The home page for the classroom apps:
 
 | App | Where it lives |
 |---|---|
-| AllAboard | https://allaboard.ai.studio |
+| AllAboard | https://allaboard-606573080592.us-east1.run.app/ (shortlink: https://bpmdata.github.io/allaboard/) ([repo](https://github.com/BPMData/AllAboard)) |
 | OverBoard | https://bpmdata.github.io/OverBoard/ ([repo](https://github.com/BPMData/OverBoard)) |
 | OverHeard | https://over-heard-606573080592.us-east1.run.app/ (shortlink: https://bpmdata.github.io/overheard/) ([repo](https://github.com/BPMData/OverHeard)) |
 | AllHail | https://allhail.ai.studio ([repo](https://github.com/BPMData/AllHail)) |
