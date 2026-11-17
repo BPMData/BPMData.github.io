@@ -50,8 +50,16 @@
       <span class="porthole"><img src="icons/overheard/favicon.svg" alt="" width="72" height="72"></span>
       <div>
         <h2>OverHeard</h2>
-        <p>Live captions and translation for multilingual learners. Put what you say on the projector in English and students' languages, or hold a two-way translated conversation.</p>
+        <p class="pitch">UN-style simultaneous interpretation</p>
+        <p>Live captions and translation for multilingual learners. Put what you say on the projector in English and up to three other languages, or hold a two-way translated conversation.</p>
         <span class="go">Open OverHeard</span>
+      </div>
+      <div class="features">
+          <ul>
+            <li>Open a lecture room with a PIN. Students go to its page on their own devices, plug in headphones and hear what you're saying, moments after you say it, in their language spoken by a natural-sounding voice.</li>
+            <li>12 languages, including Spanish, Arabic, Haitian Creole, Somali, Dari and Pashto.</li>
+            <li>Captions pop out and float over your slides, PDFs or any other window.</li>
+          </ul>
       </div>
     </a>
     
@@ -59,8 +67,16 @@
       <span class="porthole"><img src="icons/overboard/favicon.svg" alt="" width="72" height="72"></span>
       <div>
         <h2>OverBoard</h2>
-        <p>Smartboard ink that sticks to the page. Write on a PDF or worksheet, scroll, and your ink scrolls with it. Palm eraser, highlighter and PDF export.</p>
+        <p class="pitch">Built for teaching all day</p>
+        <p>Smartboard ink that sticks to the page. Write on a PDF or worksheet, scroll, and your ink scrolls with it.</p>
         <span class="go">Open OverBoard</span>
+      </div>
+      <div class="features">
+          <ul>
+            <li>Separate ink for each class period on the same worksheet, so 3rd period's notes are still there when 3rd period comes back.</li>
+            <li>A big countdown timer with a chime, palm eraser, and covers that hide answers until you wipe them away.</li>
+            <li>Opens whole textbooks, exports PDFs with your ink, and works offline once installed.</li>
+          </ul>
       </div>
     </a>
 
@@ -84,6 +100,17 @@
     </a>
   </div>
 
+  <script>
+    // Selling-point pop-ups open upward over the header; if the card is too close
+    // to the top of the window for that, open them downward instead.
+    document.querySelectorAll('a.app').forEach(function (card) {
+      var pop = card.querySelector('.features');
+      if (!pop) return;
+      function place() { card.classList.toggle('drop', card.getBoundingClientRect().top < pop.offsetHeight + 8); }
+      card.addEventListener('mouseenter', place);
+      card.addEventListener('focus', place);
+    });
+  </script>
 </main>
 <div class="seabed">
   <footer>
