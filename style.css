@@ -217,6 +217,23 @@ body.home { padding: 0; background: var(--abyss); overflow-x: hidden; }
 .wave.near { height: 24%; background: var(--sea-near); --wave-w: 380px; --wave-t: 8s;  z-index: 5; }
 
 .boat { position: absolute; display: block; pointer-events: auto; cursor: pointer; animation: bob 4.6s ease-in-out infinite; transform-origin: 50% 80%; }
+.boat:hover { z-index: 6; }
+/* the app's name unrolls beside its boat on hover */
+.boat-name {
+  position: absolute; left: 92%; top: 18%; white-space: nowrap; pointer-events: none;
+  font: italic 800 clamp(15px, 1.4vw, 19px)/1 var(--display); font-variation-settings: "SOFT" 100, "WONK" 1;
+  color: var(--btn-text); background: var(--ci-boat); padding: 6px 12px 7px; border-radius: 999px;
+  border: 2px solid var(--fg);
+  clip-path: inset(-4px 100% -4px -4px round 999px);
+  transition: clip-path .45s cubic-bezier(.2,.8,.2,1);
+}
+.boat:hover .boat-name { clip-path: inset(-4px -4px -4px -4px round 999px); }
+.boat.b-allhail .boat-name { left: auto; right: 92%; clip-path: inset(-4px -4px -4px 100% round 999px); }
+.boat.b-allhail:hover .boat-name { clip-path: inset(-4px -4px -4px -4px round 999px); }
+.boat.b-overheard { --ci-boat: var(--overheard-ink); }
+.boat.b-overboard { --ci-boat: var(--overboard-ink); }
+.boat.b-allaboard { --ci-boat: var(--allaboard-ink); }
+.boat.b-allhail   { --ci-boat: var(--allhail-ink); }
 .boat svg { display: block; width: 100%; height: auto; overflow: visible; }
 .boat:hover svg { scale: 1.12; transition: scale .2s cubic-bezier(.3,1.6,.5,1); }
 .boat .mast { fill: var(--mast); }
