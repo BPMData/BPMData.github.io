@@ -15,6 +15,10 @@ Also here:
 
 - `privacy.html` and `terms.html`: the privacy policy and terms of service for all the apps. Google's OAuth
   consent screen links to them, so keep these URLs stable.
+- `404.html`: copied from OverHeard's `deploy/github-pages-404.html`. GitHub Pages serves it for any path with no
+  file, so short links like https://bpmdata.github.io/murphy-p3 (3-40 letters, numbers or hyphens) forward to that
+  OverHeard room; anything else shows "Page not found". If you add a new top-level page or Pages project site here,
+  also add its name to `RESERVED_ROOM_CODES` in OverHeard's `src/rooms/protocol.ts`.
 - `icons/`: app icons, copied from `branding/exports/` (or `public/icons/` for AllHail) in the app repos. To change an icon, edit
   the icon generator script there, rebuild, and copy the new files here.
 
