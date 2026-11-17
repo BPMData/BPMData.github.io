@@ -295,6 +295,38 @@ a.app:hover .porthole img { animation: bob 1.6s ease-in-out infinite; }
 .app .porthole { align-self: start; }
 .app h2 { margin: 6px 0 6px; font-size: 30px; font-weight: 800; color: var(--ci); }
 .app p { margin: 0 0 16px; color: var(--muted); font-size: 16.5px; }
+.app .pitch {
+  margin: -2px 0 8px; color: var(--ci);
+  font: italic 800 18px/1.2 var(--display); font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+/* selling points: a pop-up that bursts out of the card's top-right corner,
+   up over the header */
+.features {
+  --corner: 14px; /* how far past the card's right edge the pop-up reaches */
+  position: absolute; z-index: 20; right: calc(-1 * var(--corner)); bottom: calc(100% - 22px);
+  width: min(430px, calc(100vw - 32px));
+  background: var(--panel); color: var(--fg); border: 2.5px solid var(--fg); border-radius: 18px;
+  padding: 16px 20px; box-shadow: 7px 7px 0 var(--c); pointer-events: none;
+  clip-path: circle(0 at calc(100% - var(--corner)) 100%);
+  transition: clip-path .45s cubic-bezier(.2,.8,.2,1);
+}
+.app.overheard .features { --corner: 120px; } /* spills a little over OverBoard */
+a.app:hover .features, a.app:focus-visible .features { clip-path: circle(150% at calc(100% - var(--corner)) 100%); }
+a.app:hover, a.app:focus-visible { z-index: 10; }
+@media (max-width: 760px) { .app.overheard .features { --corner: 14px; } }
+/* not enough room above (page scrolled down)? drop below the corner instead */
+.app.drop .features { bottom: auto; top: calc(100% - 22px); clip-path: circle(0 at calc(100% - var(--corner)) 0); }
+a.app.drop:hover .features, a.app.drop:focus-visible .features { clip-path: circle(150% at calc(100% - var(--corner)) 0); }
+.features ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.features li { position: relative; padding-left: 20px; font-size: 15.5px; line-height: 1.5; }
+.features li::before { /* a little pennant for a bullet */
+  content: ""; position: absolute; left: 0; top: .45em; width: 10px; height: 11px; background: var(--c);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+/* no hover on touch screens: show the points inside the card instead */
+@media (hover: none) {
+  .features { position: static; width: auto; clip-path: none; box-shadow: none; border: 0; border-top: 2px dashed var(--line); border-radius: 0; padding: 14px 0 0; grid-column: 1 / -1; }
+}
 .app .go {
   display: inline-flex; align-items: center; gap: 8px; margin-top: auto;
   background: var(--ci); color: var(--btn-text); font-weight: 700; font-size: 16px;
