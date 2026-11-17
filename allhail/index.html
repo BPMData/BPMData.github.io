@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opening AllHail…</title>
+<link rel="icon" href="../icons/allhail/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+<script>
+  (function () {
+    var target = 'https://allhail-606573080592.us-east1.run.app/' + window.location.search + window.location.hash;
+    window.location.replace(target);
+  })();
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0; url=https://allhail-606573080592.us-east1.run.app/">
+</noscript>
+</head>
+<body>
+<main>
+  <p><a id="allhail-link" href="https://allhail-606573080592.us-east1.run.app/">Open AllHail →</a></p>
+  <script>
+    var link = document.getElementById('allhail-link');
+    if (link) link.href = 'https://allhail-606573080592.us-east1.run.app/' + window.location.search + window.location.hash;
+  </script>
+</main>
+</body>
+</html>
