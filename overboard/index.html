@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opening OverBoard…</title>
+<link rel="icon" href="../icons/overboard/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+<script>
+  (function () {
+    var target = 'https://bpmdata.github.io/OverBoard/app/' + window.location.search + window.location.hash;
+    window.location.replace(target);
+  })();
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0; url=https://bpmdata.github.io/OverBoard/app/">
+</noscript>
+</head>
+<body>
+<main>
+  <p><a id="overboard-link" href="https://bpmdata.github.io/OverBoard/app/">Open OverBoard →</a></p>
+  <script>
+    var link = document.getElementById('overboard-link');
+    if (link) link.href = 'https://bpmdata.github.io/OverBoard/app/' + window.location.search + window.location.hash;
+  </script>
+</main>
+</body>
+</html>
