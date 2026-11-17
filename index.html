@@ -10,60 +10,89 @@
 <link rel="apple-touch-icon" href="icons/allaboard/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,600..900,0..100,0..1;1,9..144,600..900,0..100,0..1&display=swap">
+<meta name="theme-color" content="#A9DDF0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#07142A" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
 </head>
-<body>
-<main>
-  <h1>Classroom apps</h1>
-  <p class="lede">Free apps for teaching. They run in the browser, with no accounts and no ads.</p>
+<body class="home">
+<header class="hero">
+  <div class="stars" aria-hidden="true"></div>
+  <button type="button" class="sun" data-theme-toggle aria-label="Switch to dark mode"><span class="sunburst" aria-hidden="true"></span></button>
+  <div class="cloud c1" aria-hidden="true"></div>
+  <div class="cloud c2" aria-hidden="true"></div>
+  <div class="cloud c3" aria-hidden="true"></div>
+  <svg aria-hidden="true" class="gull g1" viewBox="0 0 26 10"><path d="M1 8 Q7 1 13 7 Q19 1 25 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  <svg aria-hidden="true" class="gull g2" viewBox="0 0 26 10"><path d="M1 8 Q7 1 13 7 Q19 1 25 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  <div class="hero-inner">
+    <p class="eyebrow"><span class="pennants" aria-hidden="true"><i></i><i></i><i></i><i></i></span>BPMData · The Over/All Flotilla</p>
+    <h1 id="motto">Classroom apps, <em>ready to sail.</em></h1>
+    <script>if (Math.random() < 0.5) document.getElementById('motto').innerHTML = 'The teacher expects that every app will <em>do his duty.</em>';</script>
+    <p class="lede">Ad-free, login-free web apps for education.</p>
+  </div>
+  <div class="scene" aria-hidden="true">
+    <div class="wave far"></div>
+      <a class="boat b-overheard" href="https://over-heard-606573080592.us-east1.run.app/" tabindex="-1" title="Open OverHeard"><svg viewBox="-2 -28 50 50"><g transform="rotate(-3.5 20 18)"><rect class="mast" x="9" y="-24" width="3.5" height="26" rx="1.75"/><path class="flag" d="M14 -24 L37 -21 L32 -16 L37 -11 L23 -9.6 L15.5 -2 L17.2 -8.3 L14 -8 Z"/><g transform="translate(2.58 0) skewX(-16)"><rect class="hull" width="40" height="18" rx="4"/><rect class="board" x="3.2" y="3.2" width="33.6" height="11.6" rx="1.5"/><path class="ink" d="M8 7.5h24M8 12.5h14"/></g></g></svg></a>
+      <a class="boat b-allaboard" href="https://allaboard-606573080592.us-east1.run.app/" tabindex="-1" title="Open AllAboard"><svg viewBox="-2 -28 50 50"><g transform="rotate(-3.5 20 18)"><rect class="mast" x="9" y="-24" width="3.5" height="26" rx="1.75"/><path class="sail" d="M14 -22 Q25.27 -15.86 33.5 -6 L14 -6 Z"/><g transform="translate(2.58 0) skewX(-16)"><rect class="hull" width="40" height="18" rx="4"/><rect class="board" x="3.2" y="3.2" width="33.6" height="11.6" rx="1.5"/><path class="ink" d="M8 12.5 C11 8 14.5 5.5 16.5 7.5 C18 9 15.5 13.5 18.5 13 C21.5 12.5 23 8 26 8.5 C28.5 9 27 12.5 30 12 C31.5 11.8 32.5 11 33 10.5"/></g></g></svg></a>
+    <div class="wave mid"></div>
+      <a class="boat b-overboard" href="https://bpmdata.github.io/OverBoard/app/" tabindex="-1" title="Open OverBoard"><svg viewBox="-2 -28 50 50"><g transform="rotate(-3.5 20 18)"><rect class="mast" x="9" y="-24" width="3.5" height="26" rx="1.75"/><path class="sail" d="M14 -22 Q25.27 -15.86 33.5 -6 L14 -6 Z"/><g transform="translate(2.58 0) skewX(-16)"><rect class="hull" width="40" height="18" rx="4"/><rect class="board" x="3.2" y="3.2" width="33.6" height="11.6" rx="1.5"/><path class="ink" d="M8 12.5 C11 8 14.5 5.5 16.5 7.5 C18 9 15.5 13.5 18.5 13 C21.5 12.5 23 8 26 8.5 C28.5 9 27 12.5 30 12 C31.5 11.8 32.5 11 33 10.5"/></g></g></svg></a>
+      <a class="boat b-allhail" href="https://allhail-606573080592.us-east1.run.app/" tabindex="-1" title="Open AllHail"><svg viewBox="-2 -28 50 50"><g transform="rotate(-3.5 20 18)"><rect class="mast" x="9" y="-24" width="3.5" height="26" rx="1.75"/><path class="sail" d="M14 -22 Q25.27 -15.86 33.5 -6 L14 -6 Z"/><g transform="translate(2.58 0) skewX(-16)"><rect class="hull" width="40" height="18" rx="4"/><rect class="board" x="3.2" y="3.2" width="33.6" height="11.6" rx="1.5"/><path class="ink" d="M8 12.5 C11 8 14.5 5.5 16.5 7.5 C18 9 15.5 13.5 18.5 13 C21.5 12.5 23 8 26 8.5 C28.5 9 27 12.5 30 12 C31.5 11.8 32.5 11 33 10.5"/></g></g></svg></a>
+    <div class="wave near"></div>
+  </div>
+</header>
+<main class="harbor">
+  <div class="anchors" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><path d="M12 7.2V21M7 11h10M4 14c0 4 3.6 7 8 7s8-3 8-7"/></svg><i></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><path d="M12 7.2V21M7 11h10M4 14c0 4 3.6 7 8 7s8-3 8-7"/></svg><i></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><path d="M12 7.2V21M7 11h10M4 14c0 4 3.6 7 8 7s8-3 8-7"/></svg><i></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><path d="M12 7.2V21M7 11h10M4 14c0 4 3.6 7 8 7s8-3 8-7"/></svg><i></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><path d="M12 7.2V21M7 11h10M4 14c0 4 3.6 7 8 7s8-3 8-7"/></svg></div>
 
   <div class="apps">
 
-    <a class="app" href="https://over-heard-606573080592.us-east1.run.app/">
-      <img src="icons/overheard/favicon.svg" alt="" width="72" height="72">
+    <a class="app overheard" href="https://over-heard-606573080592.us-east1.run.app/">
+      <span class="porthole"><img src="icons/overheard/favicon.svg" alt="" width="72" height="72"></span>
       <div>
         <h2>OverHeard</h2>
         <p>Live captions and translation for multilingual learners. Put what you say on the projector in English and students' languages, or hold a two-way translated conversation.</p>
-        <span class="go">Open OverHeard →</span>
+        <span class="go">Open OverHeard</span>
       </div>
     </a>
     
-    <a class="app" href="https://bpmdata.github.io/OverBoard/app/">
-      <img src="icons/overboard/favicon.svg" alt="" width="72" height="72">
+    <a class="app overboard" href="https://bpmdata.github.io/OverBoard/app/">
+      <span class="porthole"><img src="icons/overboard/favicon.svg" alt="" width="72" height="72"></span>
       <div>
         <h2>OverBoard</h2>
         <p>Smartboard ink that sticks to the page. Write on a PDF or worksheet, scroll, and your ink scrolls with it. Palm eraser, highlighter and PDF export.</p>
-        <span class="go">Open OverBoard →</span>
+        <span class="go">Open OverBoard</span>
       </div>
     </a>
 
-    <a class="app" href="https://allaboard-606573080592.us-east1.run.app/">
-      <img src="icons/allaboard/favicon.svg" alt="" width="72" height="72">
+    <a class="app allaboard" href="https://allaboard-606573080592.us-east1.run.app/">
+      <span class="porthole"><img src="icons/allaboard/favicon.svg" alt="" width="72" height="72"></span>
       <div>
         <h2>AllAboard</h2>
         <p>A shared whiteboard for the whole class. Students join with a room code and draw, write and chat together, with worksheets, breakout boards and teacher controls.</p>
-        <span class="go">Open AllAboard →</span>
+        <span class="go">Open AllAboard</span>
       </div>
     </a>
     
 
-    <a class="app" href="https://allhail-606573080592.us-east1.run.app/">
-      <img src="icons/allhail/favicon.svg" alt="" width="72" height="72">
+    <a class="app allhail" href="https://allhail-606573080592.us-east1.run.app/">
+      <span class="porthole"><img src="icons/allhail/favicon.svg" alt="" width="72" height="72"></span>
       <div>
         <h2>AllHail</h2>
         <p>Photos and documents read aloud for blind and low-vision students. Take or pick a picture for a quick overview or full description, with offline browser voices.</p>
-        <span class="go">Open AllHail →</span>
+        <span class="go">Open AllHail</span>
       </div>
     </a>
   </div>
 
+</main>
+<div class="seabed">
   <footer>
+    <span class="signoff">See you, space cowboy...</span>
     <a href="privacy.html">Privacy policy</a>
     <a href="terms.html">Terms of service</a>
     <a href="https://github.com/BPMData">GitHub</a>
     <a href="mailto:overboard.reporting@gmail.com">overboard.reporting@gmail.com</a>
   </footer>
-</main>
+</div>
 </body>
 </html>
