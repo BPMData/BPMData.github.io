@@ -1,0 +1,30 @@
+name: Hub checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check hub
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: .github/hub-checks
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: .github/hub-checks/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps --only-shell chromium
+      - run: npm test
