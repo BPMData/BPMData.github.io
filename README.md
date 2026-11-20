@@ -23,3 +23,18 @@ Also here:
   the icon generator script there, rebuild, and copy the new files here.
 
 Plain HTML and CSS; no build step. `.nojekyll` turns off GitHub's Jekyll processing.
+
+## Hub checks
+
+GitHub Actions checks pull requests and pushes to `main`. It opens a local copy in Chromium, checks
+the homepage, theme toggle, policy pages, and local links and assets, and exercises app shortcuts
+and an OverHeard room redirect. The checks use stub pages for the linked services.
+
+To run the checks locally with Node.js 22 and Python 3:
+
+```sh
+cd .github/hub-checks
+npm ci
+npx playwright install --only-shell chromium
+npm test
+```
