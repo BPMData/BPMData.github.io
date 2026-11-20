@@ -6,10 +6,9 @@
   https://bpmdata.github.io/<room-code> forwards to the OverHeard student room at
   https://over-heard-606573080592.us-east1.run.app/<room-code>. Rooms need no pages of their own.
 
-  Real pages (/overheard/, /allaboard/, /privacy.html, project sites such as /OverBoard/)
-  always win over this page. OverHeard refuses those names as room codes; when a new page or
-  project site is added here, add its name to RESERVED_ROOM_CODES in OverHeard's
-  src/rooms/protocol.ts.
+  Real pages always win over this page. App shortcuts below also handle capitalization variants
+  that have no matching file. Keep app names in sync with RESERVED_ROOM_CODES in OverHeard's
+  src/rooms/protocol.ts so rooms cannot claim those shortcuts.
 -->
 <html lang="en">
 <head>
@@ -20,10 +19,21 @@
 <script>
   (function () {
     var OVERHEARD = 'https://over-heard-606573080592.us-east1.run.app/';
+    // GitHub Pages project paths are case-sensitive.
+    var APP_PATHS = new Map([
+      ['allaboard', '/allaboard/'],
+      ['chefbot', '/ChefBot/'],
+      ['overboard', '/overboard/'],
+      ['overheard', '/overheard/']
+    ]);
     // Same rule as OverHeard's validRoomCode: 3–40 letters, numbers or hyphens
     var match = /^\/([A-Za-z0-9][A-Za-z0-9-]{2,39})\/?$/.exec(window.location.pathname);
     if (match) {
-      window.location.replace(OVERHEARD + match[1].toLowerCase() + window.location.search + window.location.hash);
+      var slug = match[1].toLowerCase();
+      var destination = APP_PATHS.get(slug) || OVERHEARD + slug;
+      if (destination !== window.location.pathname) {
+        window.location.replace(destination + window.location.search + window.location.hash);
+      }
     }
   })();
 </script>
