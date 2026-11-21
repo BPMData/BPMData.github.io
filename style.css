@@ -3,6 +3,63 @@
    A dawn harbor for four classroom apps.
    ========================================================== */
 
+/* ---------- fonts (self-hosted) ----------
+   Served from /fonts so the site makes no requests to Google. Each face is split into
+   latin and latin-ext files; a browser only downloads latin-ext if the page uses those
+   characters. Fraunces has its SOFT axis pinned at 100 and WONK at 1 (fontTools
+   varLib.instancer), so the rounded, wonky look is built into the files and needs no
+   font-variation-settings. Only the weight (600-900) and optical-size axes are left. */
+@font-face {
+  font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("/fonts/atkinson-normal-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("/fonts/atkinson-normal-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("/fonts/atkinson-italic-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("/fonts/atkinson-italic-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("/fonts/atkinson-normal-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("/fonts/atkinson-normal-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Fraunces"; font-style: normal; font-weight: 600 900; font-display: swap;
+  src: url("/fonts/fraunces-normal-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fraunces"; font-style: normal; font-weight: 600 900; font-display: swap;
+  src: url("/fonts/fraunces-normal-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Fraunces"; font-style: italic; font-weight: 600 900; font-display: swap;
+  src: url("/fonts/fraunces-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fraunces"; font-style: italic; font-weight: 600 900; font-display: swap;
+  src: url("/fonts/fraunces-italic-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   /* type */
   --display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -92,7 +149,7 @@ body {
 main { max-width: 960px; margin: 0 auto; }
 h1, h2, h3 {
   font-family: var(--display); line-height: 1.1; text-wrap: balance;
-  font-variation-settings: "SOFT" 100, "WONK" 1; font-optical-sizing: auto;
+  font-optical-sizing: auto;
 }
 h1 { font-size: clamp(32px, 7vw, 48px); font-weight: 800; margin: 0 0 8px; letter-spacing: -.01em; }
 h2 { font-size: 24px; font-weight: 700; margin: 40px 0 8px; }
@@ -221,7 +278,7 @@ body.home { padding: 0; background: var(--abyss); overflow-x: hidden; }
 /* the app's name unrolls beside its boat on hover */
 .boat-name {
   position: absolute; left: 92%; top: 18%; white-space: nowrap; pointer-events: none;
-  font: italic 800 clamp(15px, 1.4vw, 19px)/1 var(--display); font-variation-settings: "SOFT" 100, "WONK" 1;
+  font: italic 800 clamp(15px, 1.4vw, 19px)/1 var(--display);
   color: var(--btn-text); background: var(--ci-boat); padding: 6px 12px 7px; border-radius: 999px;
   border: 2px solid var(--fg);
   clip-path: inset(-4px 100% -4px -4px round 999px);
@@ -297,7 +354,7 @@ a.app:hover .porthole img { animation: bob 1.6s ease-in-out infinite; }
 .app p { margin: 0 0 16px; color: var(--muted); font-size: 16.5px; }
 .app .pitch {
   margin: -2px 0 8px; color: var(--ci);
-  font: italic 800 18px/1.2 var(--display); font-variation-settings: "SOFT" 100, "WONK" 1;
+  font: italic 800 18px/1.2 var(--display);
 }
 /* selling points: a pop-up that bursts out of the card's top-right corner,
    up over the header */
