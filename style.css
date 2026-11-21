@@ -401,9 +401,9 @@ a.app:hover .go::after { translate: 4px 0; }
 .seabed a { color: var(--on-deep); }
 .seabed a:hover { color: #fff; }
 .seabed .signoff { margin-right: auto; font-family: var(--display); font-style: italic; font-weight: 700; font-size: 18px; color: var(--brass-hi); }
-/* the sign-off is a secret link to the airship stage: no underline, and the Red Baron (red square + crown) drifts in on hover */
+/* the sign-off is a secret link to the airship stage: no underline, and the Floating Continent (cloud + mountain) drifts in on hover */
 .seabed a.signoff { color: var(--brass-hi); text-decoration: none; }
-.seabed a.signoff::after { content: "🟥👑"; display: inline-block; margin-left: .35em; opacity: 0; transform: translateX(-6px); transition: opacity .25s, transform .25s; }
+.seabed a.signoff::after { content: "☁️⛰️"; display: inline-block; margin-left: .35em; opacity: 0; transform: translateX(-6px); transition: opacity .25s, transform .25s; }
 .seabed a.signoff:hover::after, .seabed a.signoff:focus-visible::after { opacity: 1; transform: none; }
 
 /* ---------- night watch extras ---------- */
