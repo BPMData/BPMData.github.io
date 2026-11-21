@@ -5,12 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BPMData Classroom Apps</title>
 <meta name="description" content="Free classroom tools: AllAboard, a shared whiteboard; OverBoard, smartboard ink that sticks to the page; OverHeard, live classroom captions and translation; and AllHail, photos and documents read aloud for blind and low-vision students.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BPMData Classroom Apps">
+<meta property="og:title" content="BPMData Classroom Apps">
+<meta property="og:description" content="Free classroom tools: AllAboard, a shared whiteboard; OverBoard, smartboard ink that sticks to the page; OverHeard, live classroom captions and translation; and AllHail, photos and documents read aloud for blind and low-vision students.">
+<meta property="og:url" content="https://bpmdata.github.io/">
+<meta property="og:image" content="https://bpmdata.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A cartoon harbor at sunrise with four little sailboats, under the words: Classroom apps, ready to sail.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://bpmdata.github.io/">
 <link rel="icon" href="icons/allaboard/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="icons/allaboard/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="icons/allaboard/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,600..900,0..100,0..1;1,9..144,600..900,0..100,0..1&display=swap">
+<link rel="preload" href="/fonts/atkinson-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="theme-color" content="#A9DDF0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#07142A" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="style.css">
@@ -46,12 +56,12 @@
 
   <div class="apps">
 
-    <a class="app overheard" href="https://over-heard-606573080592.us-east1.run.app/">
+    <a class="app overheard" aria-labelledby="overheard-name" aria-describedby="overheard-pitch overheard-desc" href="https://over-heard-606573080592.us-east1.run.app/">
       <span class="porthole"><img src="icons/overheard/favicon.svg" alt="" width="72" height="72"></span>
       <div>
-        <h2>OverHeard</h2>
-        <p class="pitch">UN-style simultaneous interpretation</p>
-        <p>Live captions and translation for multilingual learners. Put what you say on the projector in English and up to three other languages, or hold a two-way translated conversation.</p>
+        <h2 id="overheard-name">OverHeard</h2>
+        <p class="pitch" id="overheard-pitch">UN-style simultaneous interpretation</p>
+        <p id="overheard-desc">Live captions and translation for multilingual learners. Put what you say on the projector in English and up to three other languages, or hold a two-way translated conversation.</p>
         <span class="go">Open OverHeard</span>
       </div>
       <div class="features">
@@ -63,12 +73,12 @@
       </div>
     </a>
     
-    <a class="app overboard" href="https://bpmdata.github.io/OverBoard/app/">
+    <a class="app overboard" aria-labelledby="overboard-name" aria-describedby="overboard-pitch overboard-desc" href="https://bpmdata.github.io/OverBoard/app/">
       <span class="porthole"><img src="icons/overboard/favicon.svg" alt="" width="72" height="72"></span>
       <div>
-        <h2>OverBoard</h2>
-        <p class="pitch">Built for teaching all day</p>
-        <p>Smartboard ink that sticks to the page. Write on a PDF or worksheet, scroll, and your ink scrolls with it.</p>
+        <h2 id="overboard-name">OverBoard</h2>
+        <p class="pitch" id="overboard-pitch">Built for teaching all day</p>
+        <p id="overboard-desc">Smartboard ink that sticks to the page. Write on a PDF or worksheet, scroll, and your ink scrolls with it.</p>
         <span class="go">Open OverBoard</span>
       </div>
       <div class="features">
@@ -80,21 +90,21 @@
       </div>
     </a>
 
-    <a class="app allaboard" href="https://allaboard-606573080592.us-east1.run.app/">
+    <a class="app allaboard" aria-labelledby="allaboard-name" aria-describedby="allaboard-desc" href="https://allaboard-606573080592.us-east1.run.app/">
       <span class="porthole"><img src="icons/allaboard/favicon.svg" alt="" width="72" height="72"></span>
       <div>
-        <h2>AllAboard</h2>
-        <p>A shared whiteboard for the whole class. Students join with a room code and draw, write and chat together, with worksheets, breakout boards and teacher controls.</p>
+        <h2 id="allaboard-name">AllAboard</h2>
+        <p id="allaboard-desc">A shared whiteboard for the whole class. Students join with a room code and draw, write and chat together, with worksheets, breakout boards and teacher controls.</p>
         <span class="go">Open AllAboard</span>
       </div>
     </a>
     
 
-    <a class="app allhail" href="https://allhail-606573080592.us-east1.run.app/">
+    <a class="app allhail" aria-labelledby="allhail-name" aria-describedby="allhail-desc" href="https://allhail-606573080592.us-east1.run.app/">
       <span class="porthole"><img src="icons/allhail/favicon.svg" alt="" width="72" height="72"></span>
       <div>
-        <h2>AllHail</h2>
-        <p>Photos and documents read aloud for blind and low-vision students. Take or pick a picture for a quick overview or full description, with offline browser voices.</p>
+        <h2 id="allhail-name">AllHail</h2>
+        <p id="allhail-desc">Photos and documents read aloud for blind and low-vision students. Take or pick a picture for a quick overview or full description, with offline browser voices.</p>
         <span class="go">Open AllHail</span>
       </div>
     </a>
@@ -114,7 +124,7 @@
 </main>
 <div class="seabed">
   <footer>
-    <span class="signoff">See you, space cowboy...</span>
+    <a class="signoff" href="https://bpmdata.github.io/EOMD/players/cdrom-player.html?airship" target="_blank" rel="noopener" title="Secret airship: next stop, the Floating Continent">See you, space cowboy...</a>
     <a href="privacy.html">Privacy policy</a>
     <a href="terms.html">Terms of service</a>
     <a href="https://github.com/BPMData">GitHub</a>
