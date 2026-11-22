@@ -58,10 +58,11 @@
 
     <a class="app overheard" aria-labelledby="overheard-name" aria-describedby="overheard-pitch overheard-desc" href="https://over-heard-606573080592.us-east1.run.app/">
       <span class="porthole"><img src="icons/overheard/favicon.svg" alt="" width="72" height="72"></span>
-      <div class="app-head">
+      <div class="app-body">
         <h2 id="overheard-name">OverHeard</h2>
         <p class="pitch" id="overheard-pitch">UN-style simultaneous interpretation</p>
         <p id="overheard-desc">Live captions and translation for multilingual learners. Put what you say on the projector in English and up to three other languages, or hold a two-way translated conversation.</p>
+        <span class="go">Open OverHeard</span>
       </div>
       <div class="features">
         <ul>
@@ -70,15 +71,15 @@
           <li>Captions pop out and float over your slides, PDFs or any other window.</li>
         </ul>
       </div>
-      <span class="go">Open OverHeard</span>
     </a>
 
     <a class="app overboard" aria-labelledby="overboard-name" aria-describedby="overboard-pitch overboard-desc" href="https://bpmdata.github.io/OverBoard/app/">
       <span class="porthole"><img src="icons/overboard/favicon.svg" alt="" width="72" height="72"></span>
-      <div class="app-head">
+      <div class="app-body">
         <h2 id="overboard-name">OverBoard</h2>
         <p class="pitch" id="overboard-pitch">Built for teaching all day</p>
         <p id="overboard-desc">Smartboard ink that sticks to the page. Write on a PDF or worksheet, scroll, and your ink scrolls with it.</p>
+        <span class="go">Open OverBoard</span>
       </div>
       <div class="features">
         <ul>
@@ -87,15 +88,15 @@
           <li>Opens whole textbooks, exports PDFs with your ink, and works offline once installed.</li>
         </ul>
       </div>
-      <span class="go">Open OverBoard</span>
     </a>
 
     <a class="app allaboard" aria-labelledby="allaboard-name" aria-describedby="allaboard-pitch allaboard-desc" href="https://allaboard-606573080592.us-east1.run.app/">
       <span class="porthole"><img src="icons/allaboard/favicon.svg" alt="" width="72" height="72"></span>
-      <div class="app-head">
+      <div class="app-body">
         <h2 id="allaboard-name">AllAboard</h2>
         <p class="pitch" id="allaboard-pitch">Real-time multiplayer classroom whiteboard</p>
         <p id="allaboard-desc">Students join with a room code and draw, write and chat together, with worksheets, breakout boards and live teacher controls.</p>
+        <span class="go">Open AllAboard</span>
       </div>
       <div class="features">
         <ul>
@@ -104,15 +105,15 @@
           <li>Drop in PDF or image worksheets as a locked background, or use built-in templates like 4-Box Frayer Models and task check-in columns.</li>
         </ul>
       </div>
-      <span class="go">Open AllAboard</span>
     </a>
 
     <a class="app allhail" aria-labelledby="allhail-name" aria-describedby="allhail-pitch allhail-desc" href="https://allhail-606573080592.us-east1.run.app/">
       <span class="porthole"><img src="icons/allhail/favicon.svg" alt="" width="72" height="72"></span>
-      <div class="app-head">
+      <div class="app-body">
         <h2 id="allhail-name">AllHail</h2>
         <p class="pitch" id="allhail-pitch">AI vision and speech for blind and low-vision students</p>
         <p id="allhail-desc">Point the camera at a worksheet, painting or document and tap one button. AllHail speaks a full description, even offline.</p>
+        <span class="go">Open AllHail</span>
       </div>
       <div class="features">
         <ul>
@@ -121,9 +122,20 @@
           <li>Teachers upload documents, edit the description, preview and download an MP3 to post on Google Classroom.</li>
         </ul>
       </div>
-      <span class="go">Open AllHail</span>
     </a>
   </div>
+
+  <script>
+    // Selling-point pop-ups open upward over the header; if the card is too close
+    // to the top of the window for that, open them downward instead.
+    document.querySelectorAll('a.app').forEach(function (card) {
+      var pop = card.querySelector('.features');
+      if (!pop) return;
+      function place() { card.classList.toggle('drop', card.getBoundingClientRect().top < pop.offsetHeight + 8); }
+      card.addEventListener('mouseenter', place);
+      card.addEventListener('focus', place);
+    });
+  </script>
 </main>
 <div class="seabed">
   <footer>

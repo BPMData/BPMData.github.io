@@ -328,11 +328,11 @@ body.home { padding: 0; background: var(--abyss); overflow-x: hidden; }
   border-bottom: 1px solid color-mix(in srgb, var(--brass-hi) 35%, transparent);
 }
 
-.apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 22px; }
+.apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; }
 
 .app {
   --c: var(--overboard); --ci: var(--overboard-ink); --cb: var(--overboard-btn);
-  position: relative; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto 1fr auto; gap: 14px 18px; align-items: start;
+  position: relative; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: stretch;
   background: var(--panel); color: var(--fg); text-decoration: none;
   border: 1px solid color-mix(in srgb, var(--fg) 24%, var(--line));
   border-top: 4px solid var(--c);
@@ -353,12 +353,13 @@ a.app:hover, a.app:focus-visible {
   border-color: var(--brass);
   outline-color: color-mix(in srgb, var(--brass) 65%, transparent);
   box-shadow: 0 6px 14px rgba(6, 21, 42, .32);
+  z-index: 10;
 }
 a.app:focus-visible { outline: 3px solid var(--brass-hi); outline-offset: 2px; }
 a.app:active { transform: translateY(0); box-shadow: 0 1px 0 rgba(6, 21, 42, .24); }
 
 .porthole {
-  position: relative; width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center;
+  position: relative; width: 88px; height: 88px; border-radius: 50%; display: grid; place-items: center;
   background: radial-gradient(circle at 35% 30%, var(--brass-hi), var(--brass) 70%);
   box-shadow: inset 0 0 0 2px rgba(0,0,0,.18), 0 2px 0 rgba(0,0,0,.15);
 }
@@ -366,33 +367,52 @@ a.app:active { transform: translateY(0); box-shadow: 0 1px 0 rgba(6, 21, 42, .24
   content: ""; position: absolute; inset: 4px; border-radius: 50%;
   border: 3px dotted rgba(0,0,0,.28);
 }
-.porthole img { position: relative; width: 64px; height: 64px; border-radius: 50%; box-shadow: 0 0 0 3px rgba(0,0,0,.15); }
+.porthole img { position: relative; width: 66px; height: 66px; border-radius: 50%; box-shadow: 0 0 0 3px rgba(0,0,0,.15); }
 a.app:hover .porthole img { animation: bob 1.6s ease-in-out infinite; }
 
-.app-head { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.app-body { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
 .app .porthole { align-self: start; }
-.app h2 { margin: 2px 0 4px; font-size: 28px; font-weight: 800; color: var(--ci); }
-.app p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
+.app h2 { margin: 4px 0 6px; font-size: 28px; font-weight: 800; color: var(--ci); }
+.app p { margin: 0 0 16px; color: var(--muted); font-size: 16px; line-height: 1.5; }
 .app .pitch {
-  margin: 0 0 8px; color: var(--ci);
+  margin: -2px 0 8px; color: var(--ci);
   font: italic 800 17.5px/1.2 var(--display);
 }
-/* inline maritime pennant highlights (always scannable, touch & desktop) */
+/* selling points: a pop-up chart plaque that bursts out of the card's top-right corner */
 .features {
-  grid-column: 1 / -1;
-  border-top: 1px dashed var(--line);
-  padding-top: 12px;
+  --corner: 14px; /* how far past the card's right edge the pop-up reaches */
+  position: absolute; z-index: 20; right: calc(-1 * var(--corner)); bottom: calc(100% - 18px);
+  width: min(430px, calc(100vw - 32px));
+  background: var(--panel); color: var(--fg);
+  border: 1px solid color-mix(in srgb, var(--fg) 28%, var(--line));
+  border-top: 4px solid var(--c);
+  border-radius: 4px;
+  outline: 1px solid color-mix(in srgb, var(--brass) 35%, transparent);
+  outline-offset: -5px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 24px rgba(6, 21, 42, .34);
+  pointer-events: none;
+  clip-path: circle(0 at calc(100% - var(--corner)) 100%);
+  transition: clip-path .42s cubic-bezier(.2,.8,.2,1);
 }
-.features ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
-.features li { position: relative; padding-left: 19px; font-size: 14.5px; line-height: 1.45; color: var(--fg); }
+.app.overheard .features { --corner: 120px; } /* spills a little over OverBoard */
+a.app:hover .features, a.app:focus-visible .features { clip-path: circle(150% at calc(100% - var(--corner)) 100%); }
+@media (max-width: 760px) { .app.overheard .features { --corner: 14px; } }
+/* not enough room above (page scrolled down)? drop below the corner instead */
+.app.drop .features { bottom: auto; top: calc(100% - 18px); clip-path: circle(0 at calc(100% - var(--corner)) 0); }
+a.app.drop:hover .features, a.app.drop:focus-visible .features { clip-path: circle(150% at calc(100% - var(--corner)) 0); }
+.features ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.features li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.5; color: var(--fg); }
 .features li::before { /* a little signal pennant for a bullet */
-  content: ""; position: absolute; left: 0; top: .42em; width: 10px; height: 10px; background: var(--c);
+  content: ""; position: absolute; left: 0; top: .45em; width: 10px; height: 11px; background: var(--c);
   clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
+/* no hover on touch screens: show the points inside the card instead */
+@media (hover: none) {
+  .features { position: static; width: auto; clip-path: none; box-shadow: none; outline: none; border: 0; border-top: 1px dashed var(--line); border-radius: 0; padding: 14px 0 0; grid-column: 1 / -1; }
+}
 .app .go {
-  grid-column: 1 / -1;
-  justify-self: start;
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 2px;
+  display: inline-flex; align-items: center; gap: 8px; margin-top: auto;
   color: var(--btn-text); font-weight: 700; font-size: 15.5px;
   padding: 9px 16px; border-radius: 3px;
   border: 1px solid color-mix(in srgb, var(--cb) 72%, #000);
