@@ -146,5 +146,18 @@
     <a href="mailto:overboard.reporting@gmail.com">overboard.reporting@gmail.com</a>
   </footer>
 </div>
+<!-- view counter: invisible GoatCounter count of visits to this home page only (no cookies, nothing shown).
+     Not on the app shortcuts, privacy, terms or 404 pages. Dashboard: https://bpmdata.goatcounter.com -->
+<script>
+(function () {
+  try {
+    var l = location;
+    if (!/^https?:$/.test(l.protocol) || /^(localhost|127\.|\[::1\]|.*\.localhost$)/.test(l.hostname)) return;
+    var e = encodeURIComponent;
+    new Image().src = 'https://bpmdata.goatcounter.com/count?p=' + e(l.pathname) + '&t=' + e(document.title) +
+      '&r=' + e(document.referrer) + '&s=' + e(screen.width) + '&rnd=' + Math.random().toString(36).slice(2);
+  } catch (err) {}
+})();
+</script>
 </body>
 </html>
