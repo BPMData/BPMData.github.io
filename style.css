@@ -384,13 +384,10 @@ a.app:hover .porthole img { animation: bob 1.6s ease-in-out infinite; }
   position: absolute; z-index: 20; right: calc(-1 * var(--corner)); bottom: calc(100% - 18px);
   width: min(430px, calc(100vw - 32px));
   background: var(--panel); color: var(--fg);
-  border: 1px solid color-mix(in srgb, var(--fg) 28%, var(--line));
-  border-top: 4px solid var(--c);
+  border: 2px solid var(--fg);
   border-radius: 4px;
-  outline: 1px solid color-mix(in srgb, var(--brass) 35%, transparent);
-  outline-offset: -5px;
   padding: 16px 20px;
-  box-shadow: 0 10px 24px rgba(6, 21, 42, .34);
+  box-shadow: 5px 5px 0 var(--c);
   pointer-events: none;
   clip-path: circle(0 at calc(100% - var(--corner)) 100%);
   transition: clip-path .42s cubic-bezier(.2,.8,.2,1);
