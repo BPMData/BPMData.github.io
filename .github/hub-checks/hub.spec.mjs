@@ -59,7 +59,7 @@ test('hub pages and their local links and assets resolve', async ({ page }) => {
   }
 });
 
-const roomOrigin = 'https://over-heard-606573080592.us-east1.run.app';
+const roomOrigin = 'https://overheard-606573080592.us-east1.run.app';
 const shortcuts = [
   ['/chefbot/', '/ChefBot/'],
   ['/cHeFbOt', '/ChefBot/'],

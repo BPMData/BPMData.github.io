@@ -8,7 +8,7 @@ The home page for the classroom apps:
 |---|---|
 | AllAboard | https://allaboard-606573080592.us-east1.run.app/ (shortlink: https://bpmdata.github.io/allaboard/) ([repo](https://github.com/BPMData/AllAboard)) |
 | OverBoard | https://bpmdata.github.io/OverBoard/ ([repo](https://github.com/BPMData/OverBoard)) |
-| OverHeard | https://over-heard-606573080592.us-east1.run.app/ (shortlink: https://bpmdata.github.io/overheard/) ([repo](https://github.com/BPMData/OverHeard)) |
+| OverHeard | https://overheard-606573080592.us-east1.run.app/ (shortlink: https://bpmdata.github.io/overheard/) ([repo](https://github.com/BPMData/OverHeard)) |
 | AllHail | https://allhail-606573080592.us-east1.run.app/ (shortlink: https://bpmdata.github.io/allhail/) ([repo](https://github.com/BPMData/AllHail)) |
 
 Also here:
